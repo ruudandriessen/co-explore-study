@@ -12,11 +12,10 @@
     "test:unused-exports": "ts-unused-exports tsconfig.json"
   },
   "dependencies": {
-    "@visx/group": "^2.10.0",
-    "@visx/mock-data": "^2.15.1",
-    "@visx/scale": "^2.2.2",
-    "@visx/shape": "^2.12.2",
+    "@tidyjs/tidy": "^2.5.2",
+    "chart.js": "^4.0.1",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.0.1",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {

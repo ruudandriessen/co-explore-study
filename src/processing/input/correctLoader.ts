@@ -1,5 +1,5 @@
-import { InputRow } from "../models/InputRow";
-import { RowData } from "../models/RowData";
+import { InputRow } from "../../models/InputRow";
+import { RowData } from "../../models/RowData";
 
 export function correctLoader(input: InputRow[]): RowData[] {
   return input.map((input) => ({
