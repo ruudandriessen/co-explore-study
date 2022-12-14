@@ -10,13 +10,13 @@ interface BarChartProps {
 }
 
 export function UniqueLabels({ data }: BarChartProps) {
-  const dataset = uniqueLabelsDataset(data);
+  const datasets = uniqueLabelsDataset(data);
 
   return (
     <Bar
       data={{
         labels: uniqueLabelsLabels(data),
-        datasets: [dataset],
+        datasets: [datasets],
       }}
     ></Bar>
   );
