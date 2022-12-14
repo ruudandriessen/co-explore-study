@@ -20,4 +20,6 @@ ChartJS.register(
   Legend
 );
 
+ChartJS.defaults.font.family = '"Poppins", sans-serif';
+
 createRoot(document.getElementById("root") as HTMLElement).render(<App />);
