@@ -1,7 +1,23 @@
-import { Table, Tbody, Td, Thead, Tr } from "@chakra-ui/react";
+import { Badge, Flex, Table, Tbody, Td, Thead, Tr } from "@chakra-ui/react";
 
 interface RowDataTableProps<TRowContent extends Object> {
   rows: TRowContent[];
+}
+
+function CellRenderer({ value }: { value: any }) {
+  if (Array.isArray(value)) {
+    return (
+      <Td>
+        <Flex flexWrap={"wrap"} display="flex" gap={2}>
+          {value.map((value) => (
+            <Badge key={value}>{value}</Badge>
+          ))}
+        </Flex>
+      </Td>
+    );
+  }
+
+  return <Td>{value}</Td>;
 }
 
 export function RowDataTable<TRowContent extends Object>({
@@ -25,7 +41,7 @@ export function RowDataTable<TRowContent extends Object>({
         {rows.map((row, ridx) => (
           <Tr key={ridx}>
             {Object.values(row).map((cell, cidx) => (
-              <Td key={cidx}>{cell}</Td>
+              <CellRenderer key={cidx} value={cell} />
             ))}
           </Tr>
         ))}
