@@ -55,7 +55,7 @@ const LABEL_GROUP_COLORS = {
   [LabelGroups.Research]: "#8FD14F", // light green
 };
 
-export function uniqueLabels(data: OutputRow[]) {
+function uniqueLabels(data: OutputRow[]) {
   const expandedData = data.flatMap((row) =>
     row.labels
       .filter((label) => label != "")
