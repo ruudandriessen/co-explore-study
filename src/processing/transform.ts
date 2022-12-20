@@ -90,7 +90,11 @@ function transformLabels(input: string): {
   const groupLabel = input.match(GROUP_REGEX);
 
   if (!groupLabel) {
-    const labels = input.split(",").map((label) => label.trim());
+    const labels = input
+      .split(",")
+      .map((label) => label.trim())
+      .filter((label) => label != "");
+
     return {
       labels,
       participants: [],
@@ -101,7 +105,8 @@ function transformLabels(input: string): {
   const labels = input
     .replace(groupLabelContent, "")
     .split(",")
-    .map((label) => label.trim());
+    .map((label) => label.trim())
+    .filter((label) => label != "");
 
   return {
     labels,
