@@ -1,5 +1,5 @@
 export interface InputRow {
-  "﻿title": string;
+  title: string;
   content: string;
   unknown1: string;
   labels: string;
