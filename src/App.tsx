@@ -3,15 +3,13 @@ import { Uploader } from "./components/Uploader";
 import { InputRow } from "./models/InputRow";
 import { loadFile } from "./processing/loadFile";
 import {
-  Button,
   ChakraProvider,
   ColorModeScript,
   extendTheme,
   Flex,
-  useColorMode,
 } from "@chakra-ui/react";
-import { FileContents } from "./components/FileContents";
 import { ColorModeToggle } from "./components/ColorModeToggle";
+import { FileContents } from "./components/FileContents";
 
 const theme = extendTheme({
   config: {
@@ -25,7 +23,7 @@ export function App() {
     <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={"system"} />
 
-      <Flex padding={2} gap={2} direction="column">
+      <Flex padding={2} gap={2} direction="column" maxHeight={"100vh"}>
         <Flex padding={2} alignItems="center" gap={2}>
           <ColorModeToggle />
           <Uploader

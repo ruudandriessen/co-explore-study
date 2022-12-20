@@ -8,4 +8,6 @@ export interface ContentProperties {
 export interface RowData extends ContentProperties {
   activity: string;
   labels: string[];
+  group?: number;
+  participants: number[];
 }

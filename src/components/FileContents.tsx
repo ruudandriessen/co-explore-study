@@ -12,14 +12,14 @@ interface FileContentsProps {
 export function FileContents({ rows }: FileContentsProps) {
   const filtered = useMemo(() => (rows ? transform(rows) : null), [rows]);
   return (
-    <Tabs>
+    <Tabs overflow="hidden" display="flex" flexDirection="column">
       <TabList>
         <Tab>Input</Tab>
         <Tab>Output</Tab>
         <Tab>Visualization</Tab>
       </TabList>
 
-      <TabPanels>
+      <TabPanels flex="1" overflow="scroll">
         <TabPanel>
           <RowDataTable rows={rows ?? []} />
         </TabPanel>
