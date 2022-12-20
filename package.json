@@ -12,8 +12,13 @@
     "test:unused-exports": "ts-unused-exports tsconfig.json"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.4.4",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@tidyjs/tidy": "^2.5.2",
     "chart.js": "^4.0.1",
+    "d3-dsv": "^3.0.1",
+    "framer-motion": "^7.10.3",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.0.1",
     "react-dom": "^18.2.0"

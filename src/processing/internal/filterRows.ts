@@ -1,4 +1,4 @@
-import { RowData } from "../models/RowData";
+import { RowData } from "../../models/RowData";
 
 function filterTitleOnlyRow(row: RowData) {
   const columnWithValue = Object.values(row).filter(
