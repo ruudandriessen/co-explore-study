@@ -18,7 +18,7 @@ const theme = extendTheme({
 
 export function App() {
   const [inputRows, setInputRows] = useState<InputRow[] | null>(null);
-  const filtered = useMemo(
+  const result = useMemo(
     () => (inputRows ? transform(inputRows) : null),
     [inputRows]
   );
@@ -28,10 +28,14 @@ export function App() {
       <ColorModeScript initialColorMode={"system"} />
 
       <Flex padding={2} gap={2} direction="column" maxHeight={"100vh"}>
-        <Header filtered={filtered} setInputRows={setInputRows} />
+        <Header output={result?.output} setInputRows={setInputRows} />
 
-        {inputRows && filtered ? (
-          <FileContents filtered={filtered} rows={inputRows} />
+        {inputRows && result ? (
+          <FileContents
+            output={result.output}
+            filtered={result.filtered}
+            rows={inputRows}
+          />
         ) : (
           <div>No data</div>
         )}

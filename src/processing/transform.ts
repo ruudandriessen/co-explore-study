@@ -125,6 +125,8 @@ function transformRow(row: InputRow): RowData {
   };
 }
 
-export function transform(input: InputRow[]): RowData[] {
-  return input.filter(filterRow).map(transformRow);
+export function transform(input: InputRow[]) {
+  const output = input.filter(filterRow).map(transformRow);
+  const filtered = input.filter((row) => !filterRow(row));
+  return { output, filtered };
 }

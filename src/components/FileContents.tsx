@@ -6,15 +6,17 @@ import { Visualization } from "./Visualization";
 
 interface FileContentsProps {
   rows: InputRow[];
-  filtered: RowData[];
+  filtered: InputRow[];
+  output: RowData[];
 }
 
-export function FileContents({ rows, filtered }: FileContentsProps) {
+export function FileContents({ rows, output, filtered }: FileContentsProps) {
   return (
     <Tabs overflow="hidden" display="flex" flexDirection="column">
       <TabList>
-        <Tab>Input</Tab>
-        <Tab>Output</Tab>
+        <Tab>{`Input (${rows.length})`}</Tab>
+        <Tab>{`Filtered (${filtered.length})`}</Tab>
+        <Tab>{`Output (${output.length})`}</Tab>
         <Tab>Visualization</Tab>
       </TabList>
 
@@ -26,7 +28,10 @@ export function FileContents({ rows, filtered }: FileContentsProps) {
           <RowDataTable rows={filtered ?? []} />
         </TabPanel>
         <TabPanel>
-          <Visualization data={filtered ?? []} />
+          <RowDataTable rows={output ?? []} />
+        </TabPanel>
+        <TabPanel>
+          <Visualization data={output ?? []} />
         </TabPanel>
       </TabPanels>
     </Tabs>

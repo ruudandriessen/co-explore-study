@@ -9,22 +9,22 @@ import { csvFormat } from "d3-dsv";
 
 interface HeaderProps {
   setInputRows: (rows: InputRow[]) => void;
-  filtered: RowData[] | null;
+  output?: RowData[];
 }
 
-export function Header({ filtered, setInputRows }: HeaderProps) {
+export function Header({ output, setInputRows }: HeaderProps) {
   const downloadCsvFile = useCallback(() => {
-    if (!filtered) return;
+    if (!output) return;
 
-    const csvContent = csvFormat(filtered);
+    const csvContent = csvFormat(output);
 
     const blob = new Blob([csvContent], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.setAttribute("href", url);
-    link.setAttribute("download", "filtered.csv");
+    link.setAttribute("download", "output.csv");
     link.click();
-  }, [filtered]);
+  }, [output]);
   return (
     <Flex padding={2} alignItems="center" gap={2}>
       <ColorModeToggle />
@@ -35,7 +35,7 @@ export function Header({ filtered, setInputRows }: HeaderProps) {
         }}
       />
 
-      <Button disabled={!filtered} onClick={downloadCsvFile}>
+      <Button disabled={!output} onClick={downloadCsvFile}>
         Download
       </Button>
     </Flex>
