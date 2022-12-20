@@ -1,17 +1,13 @@
-import { RowData } from "../../models/RowData";
+import { InputRow } from "../../models/InputRow";
 
-function filterTitleOnlyRow(row: RowData) {
+function filterTitleAndContentOnlyRow(row: InputRow) {
   const columnWithValue = Object.values(row).filter(
     (value) => value != ""
   ).length;
 
-  return columnWithValue > 1;
+  return columnWithValue > 2;
 }
 
-function filterRow(row: RowData) {
-  return filterTitleOnlyRow(row);
-}
-
-export function filterRows(input: RowData[]) {
-  return input.filter(filterRow);
+export function filterRow(row: InputRow) {
+  return filterTitleAndContentOnlyRow(row);
 }
