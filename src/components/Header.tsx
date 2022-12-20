@@ -31,7 +31,11 @@ export function Header({ output, setInputRows }: HeaderProps) {
 
       <Uploader
         onFileSelected={async (files) => {
-          setInputRows(await loadFile(files[0]));
+          const inputRows = (
+            await Promise.all(Array.from(files).map((file) => loadFile(file)))
+          ).flat();
+
+          setInputRows(inputRows);
         }}
       />
 

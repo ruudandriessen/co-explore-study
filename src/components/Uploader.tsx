@@ -7,6 +7,7 @@ export const Uploader = ({ onFileSelected }: UploaderProps) => {
     <input
       type="file"
       accept=".csv"
+      multiple
       onChange={async (ev) => {
         const files = ev.target.files;
         if (!files) return;
