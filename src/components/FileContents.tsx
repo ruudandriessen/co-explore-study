@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { InputRow } from "../models/InputRow";
 import { transform } from "../processing/transform";
 import { RowDataTable } from "./RowDataTable";
+import { Visualization } from "./Visualization";
 
 interface FileContentsProps {
   rows: InputRow[];
@@ -15,6 +16,7 @@ export function FileContents({ rows }: FileContentsProps) {
       <TabList>
         <Tab>Input</Tab>
         <Tab>Output</Tab>
+        <Tab>Visualization</Tab>
       </TabList>
 
       <TabPanels>
@@ -23,6 +25,9 @@ export function FileContents({ rows }: FileContentsProps) {
         </TabPanel>
         <TabPanel>
           <RowDataTable rows={filtered ?? []} />
+        </TabPanel>
+        <TabPanel>
+          <Visualization data={filtered ?? []} />
         </TabPanel>
       </TabPanels>
     </Tabs>

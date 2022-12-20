@@ -14,6 +14,7 @@ export function UniqueLabels({ data }: BarChartProps) {
 
   return (
     <Bar
+      options={{ responsive: true }}
       data={{
         labels: uniqueLabelsLabels(data),
         datasets: [datasets],

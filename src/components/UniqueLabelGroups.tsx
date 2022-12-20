@@ -7,5 +7,10 @@ interface BarChartProps {
 }
 
 export function UniqueLabelGroups({ data }: BarChartProps) {
-  return <Bar data={uniqueLabelGroupsDataset(data)}></Bar>;
+  return (
+    <Bar
+      options={{ responsive: true }}
+      data={uniqueLabelGroupsDataset(data)}
+    ></Bar>
+  );
 }
