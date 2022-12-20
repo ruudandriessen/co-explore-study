@@ -1,16 +1,15 @@
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
-import { useMemo } from "react";
 import { InputRow } from "../models/InputRow";
-import { transform } from "../processing/transform";
+import { RowData } from "../models/RowData";
 import { RowDataTable } from "./RowDataTable";
 import { Visualization } from "./Visualization";
 
 interface FileContentsProps {
   rows: InputRow[];
+  filtered: RowData[];
 }
 
-export function FileContents({ rows }: FileContentsProps) {
-  const filtered = useMemo(() => (rows ? transform(rows) : null), [rows]);
+export function FileContents({ rows, filtered }: FileContentsProps) {
   return (
     <Tabs overflow="hidden" display="flex" flexDirection="column">
       <TabList>
