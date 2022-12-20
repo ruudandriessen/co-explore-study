@@ -14,6 +14,7 @@ export function UniqueActivities({ data }: BarChartProps) {
 
   return (
     <Bar
+      options={{ responsive: true }}
       data={{
         labels: uniqueActivityLabels(data),
         datasets: [uniqueActivityDataset],
