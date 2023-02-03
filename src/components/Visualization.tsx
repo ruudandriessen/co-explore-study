@@ -1,4 +1,4 @@
-import { Flex, Grid } from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
 import { OutputRow } from "../models/OutputRow";
 import { UniqueActivities } from "./UniqueActivities";
 import { UniqueLabelGroups } from "./UniqueLabelGroups";

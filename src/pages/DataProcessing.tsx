@@ -1,5 +1,5 @@
 import { ColorModeScript, Flex } from "@chakra-ui/react";
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import { FileContents } from "../components/FileContents";
 import { Header } from "../components/Header";
 import { InputRow } from "../models/InputRow";

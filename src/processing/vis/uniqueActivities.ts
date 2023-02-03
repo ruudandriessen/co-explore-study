@@ -1,4 +1,4 @@
-import { tidy, groupBy, summarize, n, arrange, desc } from "@tidyjs/tidy";
+import { arrange, desc, groupBy, n, summarize, tidy } from "@tidyjs/tidy";
 import { OutputRow } from "../../models/OutputRow";
 
 function uniqueActivities(data: OutputRow[]) {
