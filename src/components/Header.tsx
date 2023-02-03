@@ -4,7 +4,6 @@ import { useCallback } from "react";
 import { InputRow } from "../models/InputRow";
 import { RowData } from "../models/RowData";
 import { loadFile } from "../processing/loadFile";
-import { ColorModeToggle } from "./ColorModeToggle";
 import { Uploader } from "./Uploader";
 
 interface HeaderProps {
@@ -27,8 +26,6 @@ export function Header({ output, setInputRows }: HeaderProps) {
   }, [output]);
   return (
     <Flex padding={2} alignItems="center" gap={2}>
-      <ColorModeToggle />
-
       <Uploader
         onFileSelected={async (files) => {
           const inputRows = (
