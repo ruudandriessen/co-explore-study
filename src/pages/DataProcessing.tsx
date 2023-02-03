@@ -1,4 +1,4 @@
-import { ColorModeScript, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { useMemo, useState } from "react";
 import { FileContents } from "../components/FileContents";
 import { Header } from "../components/Header";
@@ -11,10 +11,9 @@ export const DataProcessing = () => {
     () => (inputRows ? transform(inputRows) : null),
     [inputRows]
   );
+
   return (
     <>
-      <ColorModeScript initialColorMode={"system"} />
-
       <Flex padding={2} gap={2} direction="column" maxHeight={"100vh"}>
         <Header output={result?.output} setInputRows={setInputRows} />
 
