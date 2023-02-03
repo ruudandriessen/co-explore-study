@@ -1,11 +1,11 @@
 import { Button, Flex } from "@chakra-ui/react";
+import { csvFormat } from "d3-dsv";
 import { useCallback } from "react";
 import { InputRow } from "../models/InputRow";
 import { RowData } from "../models/RowData";
 import { loadFile } from "../processing/loadFile";
 import { ColorModeToggle } from "./ColorModeToggle";
 import { Uploader } from "./Uploader";
-import { csvFormat } from "d3-dsv";
 
 interface HeaderProps {
   setInputRows: (rows: InputRow[]) => void;

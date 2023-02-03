@@ -1,15 +1,15 @@
 import { createRoot } from "react-dom/client";
 
-import { App } from "./App";
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
   BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LinearScale,
   Title,
   Tooltip,
-  Legend,
 } from "chart.js";
+import { App } from "./App";
 
 ChartJS.register(
   CategoryScale,

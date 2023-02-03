@@ -1,4 +1,4 @@
-import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import { InputRow } from "../models/InputRow";
 import { RowData } from "../models/RowData";
 import { RowDataTable } from "./RowDataTable";
