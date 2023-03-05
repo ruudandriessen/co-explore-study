@@ -5,6 +5,7 @@ const WELL_KNOWN_PROPERTIES = [
   "work style (remote/on-site/ hybrid)",
   "tools",
   "outputs",
+  "co-exploration",
 ];
 
 function findNextProperty(input: string) {
@@ -29,8 +30,12 @@ function getNextPropertyFromString(input: string) {
     remainingSearchText.length > 0
       ? findNextProperty(remainingSearchText.join(":"))
       : null;
+
   if (!nextProperty) {
-    return null;
+    return {
+      key: key.trim(),
+      value: remainingSearchText.join(":"),
+    };
   }
 
   const [value, ...remaining] = remainingSearchText
@@ -45,7 +50,7 @@ function getNextPropertyFromString(input: string) {
 }
 
 function getAllPropertiesFromString(input: string) {
-  let remainingString = input.replace(
+  const remainingString = input.replace(
     "Can you briefly explain your activities?",
     ""
   );
@@ -55,10 +60,11 @@ function getAllPropertiesFromString(input: string) {
 
   while (property != null) {
     const { key, value, remaining } = property;
-    remainingString = remaining;
     result[key] = value;
 
-    property = getNextPropertyFromString(remainingString);
+    if (!remaining) break;
+
+    property = getNextPropertyFromString(remaining);
   }
 
   return result;
@@ -70,11 +76,13 @@ export function transformCardContent(input: string): ContentProperties {
   const workStyle = properties["work style (remote/on-site/ hybrid)"]?.trim();
   const tools = properties["tools"];
   const outputs = properties["outputs"];
+  const coexplore = properties["co-exploration"] ?? "";
 
   return {
     content,
     workStyle,
     tools: tools ? tools.split(",").map((tool) => tool.trim()) : [],
     outputs: outputs ? outputs.split(",").map((output) => output.trim()) : [],
+    coexplore,
   };
 }

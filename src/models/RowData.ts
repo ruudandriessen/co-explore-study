@@ -5,6 +5,7 @@ export interface ContentProperties {
   workStyle: string;
   outputs: string[];
   content: string;
+  coexplore: string;
 }
 
 export interface RowData extends ContentProperties {
