@@ -30,10 +30,12 @@ export function RowDataTable<TRowContent extends Object>({
   const keys = Object.keys(rows[0]);
   return (
     <Table maxWidth={"100%"} variant="striped" size="sm">
-      <Thead>
+      <Thead position="sticky" top="0" background="Background" boxShadow="md">
         <Tr>
           {keys.map((col, hidx) => (
-            <Td key={hidx}>{col}</Td>
+            <Td key={hidx}>
+              <strong>{col}</strong>
+            </Td>
           ))}
         </Tr>
       </Thead>
