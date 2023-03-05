@@ -8,6 +8,10 @@ function filterTitleAndContentOnlyRow(row: InputRow) {
   return columnWithValue > 2;
 }
 
+function filterCoExplore(row: InputRow) {
+  return row.title.toLowerCase() !== "co-exploration";
+}
+
 export function filterRow(row: InputRow) {
-  return filterTitleAndContentOnlyRow(row);
+  return filterTitleAndContentOnlyRow(row) && filterCoExplore(row);
 }
