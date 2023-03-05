@@ -1,7 +1,7 @@
 import { arrange, desc, groupBy, n, summarize, tidy } from "@tidyjs/tidy";
-import { OutputRow } from "../../models/OutputRow";
+import { RowData } from "../../models/RowData";
 
-function uniqueLabels(data: OutputRow[]) {
+function uniqueLabels(data: RowData[]) {
   const expandedData = data.flatMap((row) =>
     row.labels
       .filter((label) => label != "")
@@ -15,11 +15,11 @@ function uniqueLabels(data: OutputRow[]) {
   );
 }
 
-export function uniqueLabelsLabels(data: OutputRow[]) {
+export function uniqueLabelsLabels(data: RowData[]) {
   return uniqueLabels(data).map((row) => row.labels);
 }
 
-export function uniqueLabelsDataset(data: OutputRow[]) {
+export function uniqueLabelsDataset(data: RowData[]) {
   const groupedData = uniqueLabels(data);
 
   return {

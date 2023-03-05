@@ -1,12 +1,12 @@
 import { Bar } from "react-chartjs-2";
-import { OutputRow } from "../models/OutputRow";
+import { RowData } from "../models/RowData";
 import {
   uniqueLabelsDataset,
   uniqueLabelsLabels,
 } from "../processing/vis/uniqueLabels";
 
 interface BarChartProps {
-  data: OutputRow[];
+  data: RowData[];
 }
 
 export function UniqueLabels({ data }: BarChartProps) {
