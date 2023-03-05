@@ -25,6 +25,15 @@ export function Home() {
           Papers
         </Button>
       </Flex>
+      <Flex>
+        <Button
+          as={"a"}
+          target="_blank"
+          href="https://github.com/ruudandriessen/co-explore-study"
+        >
+          Visit the Git repository
+        </Button>
+      </Flex>
     </Flex>
   );
 }
