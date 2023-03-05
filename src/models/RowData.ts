@@ -3,7 +3,7 @@ import { LabelCategory } from "../processing/internal/transformLabelsToCategorie
 export interface ContentProperties {
   tools: string[];
   workStyle: string;
-  outputs: string[];
+  outputs: string;
   content: string;
   coexplore: string;
 }
