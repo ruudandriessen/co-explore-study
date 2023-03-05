@@ -4,5 +4,5 @@ export interface InputRow {
   unknown1: string;
   labels: string;
   unknown2: string;
-  unknown3: string;
+  date: string;
 }
