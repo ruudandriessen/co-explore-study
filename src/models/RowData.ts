@@ -10,4 +10,5 @@ export interface RowData extends ContentProperties {
   labels: string[];
   group?: number;
   participants: number[];
+  date: string;
 }

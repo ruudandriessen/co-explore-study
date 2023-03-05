@@ -121,6 +121,7 @@ function transformLabels(input: string): {
 function transformRow(row: InputRow): RowData {
   return {
     activity: row.title,
+    date: row.date,
     ...transformLabels(row.labels),
     ...transformContent(row.content),
   };
