@@ -9,7 +9,7 @@ function filterTitleAndContentOnlyRow(row: InputRow) {
 }
 
 function filterCoExplore(row: InputRow) {
-  return row.title.toLowerCase() !== "co-exploration";
+  return !row.title.toLowerCase().startsWith("co-exploration");
 }
 
 export function filterRow(row: InputRow) {
