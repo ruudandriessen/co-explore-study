@@ -80,7 +80,7 @@ function transformContent(input: string): ContentProperties {
     outputs: outputs ? outputs.split(",").map((output) => output.trim()) : [],
   };
 }
-const GROUP_REGEX = /[Gg]([0-9])[Pp]([0-9,]+)/;
+const GROUP_REGEX = /[Gg]([0-9])[Pp]([0-9+]+)/;
 
 function transformLabels(input: string): {
   labels: string[];
@@ -102,6 +102,7 @@ function transformLabels(input: string): {
   }
 
   const [groupLabelContent, group, participants] = groupLabel;
+
   const labels = input
     .replace(groupLabelContent, "")
     .split(",")
@@ -112,7 +113,7 @@ function transformLabels(input: string): {
     labels,
     group: parseInt(group),
     participants: participants
-      .split(",")
+      .split("+")
       .map((participant) => parseInt(participant)),
   };
 }
