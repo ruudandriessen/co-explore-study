@@ -1,9 +1,15 @@
+import {
+  LabelCategory,
+  transformLabelsToCategories,
+} from "./transformLabelsToCategories";
+
 const GROUP_REGEX = /[Gg]([0-9])[Pp]([0-9+]+)/;
 
 export function transformLabels(input: string): {
   labels: string[];
   group?: number;
   participants: number[];
+  categories: LabelCategory[];
 } {
   const groupLabel = input.match(GROUP_REGEX);
 
@@ -16,6 +22,7 @@ export function transformLabels(input: string): {
     return {
       labels,
       participants: [],
+      categories: transformLabelsToCategories(labels),
     };
   }
 
@@ -33,5 +40,6 @@ export function transformLabels(input: string): {
     participants: participants
       .split("+")
       .map((participant) => parseInt(participant)),
+    categories: transformLabelsToCategories(labels),
   };
 }
