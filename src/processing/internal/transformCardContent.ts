@@ -82,7 +82,7 @@ export function transformCardContent(input: string): ContentProperties {
     content,
     workStyle,
     tools: tools ? tools.split(",").map((tool) => tool.trim()) : [],
-    outputs: outputs ? outputs.split(",").map((output) => output.trim()) : [],
+    outputs,
     coexplore,
   };
 }
