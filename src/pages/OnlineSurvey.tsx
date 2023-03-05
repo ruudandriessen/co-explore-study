@@ -14,7 +14,6 @@ const CATEGORIES = [
 
 export const OnlineSurvey = () => {
   const dataWithGroup = mapSurveyData(data);
-  console.log(dataWithGroup);
 
   const groupedData: [string, [string, any]][] = tidy(
     dataWithGroup,
