@@ -3,7 +3,7 @@ import {
   transformLabelsToCategories,
 } from "./transformLabelsToCategories";
 
-const GROUP_REGEX = /[Gg]([0-9])[Pp]([0-9+]+)/;
+const GROUP_REGEX = /[Gg]([0-9]+)[Pp]([0-9+]+)/;
 
 export function transformLabels(input: string): {
   labels: string[];
