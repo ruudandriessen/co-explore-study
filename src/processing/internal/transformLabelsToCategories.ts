@@ -3,7 +3,7 @@ export enum LabelCategory {
   Ideation = "Ideation activities",
   Prototyping = "Prototyping",
   Research = "Research activities",
-  DemoDay = "Demo day deliverables",
+  DemoDay = "REPORTING AND FINALISING FOR THE ASSESSMENT",
 }
 
 const LABEL_MAPPING: Record<string, LabelCategory> = {
@@ -18,7 +18,7 @@ const LABEL_MAPPING: Record<string, LabelCategory> = {
   preparation: LabelCategory.TeamCommunication,
   bonding: LabelCategory.TeamCommunication,
   "coordinating with others": LabelCategory.TeamCommunication,
-  "squad activity": LabelCategory.TeamCommunication,
+  "additional squad activity": LabelCategory.TeamCommunication,
 
   brainstorming: LabelCategory.Ideation,
   ideation: LabelCategory.Ideation,
@@ -36,10 +36,10 @@ const LABEL_MAPPING: Record<string, LabelCategory> = {
   exploration: LabelCategory.Ideation,
 
   "material exploration": LabelCategory.Prototyping,
-  "digital prototyping": LabelCategory.Prototyping,
+  "digital prototyping (by means of computer)": LabelCategory.Prototyping,
   "physical prototyping": LabelCategory.Prototyping,
   calculation: LabelCategory.Prototyping,
-  finalizing: LabelCategory.Prototyping,
+  finalising: LabelCategory.Prototyping,
 
   conference: LabelCategory.Research,
   "literature reading": LabelCategory.Research,
@@ -57,6 +57,7 @@ const LABEL_MAPPING: Record<string, LabelCategory> = {
   pitch: LabelCategory.DemoDay,
   "set-up": LabelCategory.DemoDay,
   "report writing": LabelCategory.DemoDay,
+  "mid-term demo day": LabelCategory.DemoDay,
   "demo day": LabelCategory.DemoDay,
 };
 
